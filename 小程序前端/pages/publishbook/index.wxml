@@ -1,0 +1,34 @@
+<!--pages/mybook/index.wxml-->
+
+<block wx:if="{{loading}}">
+  <view class="loading_box">
+    <image class="loading1" src="../../imag/qqtp/book-icon.png"></image>
+  </view>
+</block>
+
+<block wx:else>
+  <view class="book-detail-header">
+    <image src="{{book.image}}" class="book-image"></image>
+    <view class="book-detail-author">
+      <text class="title">{{book.title}}</text>
+      <text class="author">{{book.author}}</text>
+      <view>
+        <view class="bookclass" bindtap='select'>{{nowtext}}
+          <view  class="select" wx:if="{{show}}">
+            <view class="select" wx:for="{{BookClass}}" wx:for-index='n' wx:for-item="class" bindtap='selectclass' data-class="{{class}}">{{class}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="book-summary">
+    <text class="book-summary-header">图书简介</text>
+    <view class="book-summary-content">{{book.summary}}</view>
+    <view class="publish" bindtap='publish'>
+      <text>确定发布</text>
+    </view>
+
+  </view>
+
+</block>

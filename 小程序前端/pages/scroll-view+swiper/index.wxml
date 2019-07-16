@@ -1,0 +1,24 @@
+<view>
+  <scroll-view  scroll-left="{{scrollLeft}}" scroll-x class="tab-h">
+    <block wx:for="{{BookClass}}" wx:for-index='n' wx:for-item="class">
+      <view class="tab {{tab_index == n ? 'active':''}}" data-index="{{n}}" data-bookclass="{{class}}" catchtap="selectTab">{{class}}</view>
+    </block>
+  </scroll-view>
+</view>
+
+<swiper class="swiper" bindchange="tabChange" current="{{tab_index}}">
+  <swiper-item wx:for="{{BookClass}}"  wx:for-index='n'>
+    <scroll-view scroll-y="true" style="height:100%"  bindscrolltolower="lower" data-n="{{n}}">
+      <block wx:for="{{book[n]}}" wx:for-item="b">
+        <view class="booklist" bindtap='gobookdetail' data-book="{{b}}">
+          <image src="{{b.image}}" class='book-icon-img' mode="aspectFill"></image>
+          <view class='bookmessg'>
+            <text style="height:40%" class="bookname">{{b.bookname}}</text>
+            <text style="height:20%" class="text">  {{b.writer}}</text>
+            <text style="height:40%" class="text">简介:{{b.bookdetail}}</text>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </swiper-item>
+</swiper>

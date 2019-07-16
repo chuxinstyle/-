@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/wxml/indeex",
+    "pages/index/index",
+    "pages/index/addresslist/index",
+    "pages/index/address/index",
+    "pages/index/borrowermeg/index",
+    "pages/index/collection/index",
+    "pages/logs/logs",
+    "pages/publishbook/index",
+    "pages/scroll-view+swiper/index",
+    "pages/bookdetail/index",
+    "pages/publishbook/userpublish/index",
+    "pages/removepublish/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#3A393F",
+    "navigationBarTitleText": "共享图书",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#FAFAFA"
+  },
+  "tabBar": {
+    "color": "#8dd",
+    "list": [
+      {
+        "pagePath": "pages/wxml/indeex",
+        "iconPath": "imag/icons/lingdu.png",
+        "selectedIconPath": "imag/icons/lingdu_sel.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/scroll-view+swiper/index",
+        "iconPath": "imag/icons/stack.png",
+        "selectedIconPath": "imag/icons/stack_sel.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "imag/icons/mine.png",
+        "selectedIconPath": "imag/icons/mine_sel.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,11 @@
+<block wx:for="{{collectbook}}" wx:for-item="b">
+        <view class="booklist" bindtap='gobookdetail' data-book="{{b}}">
+          <image src="{{b.image}}" class='book-icon-img' mode="aspectFill"></image>
+          <view class='bookmessg'>
+            <text style="height:40%" class="bookname">{{b.bookname}}</text>
+            <text style="height:20%" class="text">  {{b.writer}}</text>
+            <text style="height:40%" class="text" wx:if="{{b.borrower==null}}">未被借阅</text>
+            <text style="height:40%" class="text" wx:else>已被借阅</text>
+          </view>
+        </view>
+      </block>

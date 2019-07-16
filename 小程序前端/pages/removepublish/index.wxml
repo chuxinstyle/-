@@ -1,0 +1,20 @@
+<!--pages/removepublish/index.wxml-->
+ <view class="book-detail-header">
+    <image src="{{book.image}}" class="book-image"></image>
+    <view class="book-detail-author">
+      <text class="title">书名:{{book.bookname}}</text>
+      <text class="author">作者：{{book.writer}}</text>
+      <text class="rate">种类：{{book.bookclass}}</text>
+    </view>
+  </view>
+  <view class="book-summary">
+    <text class="book-summary-header">图书简介</text>
+    <view class="book-summary-content">{{book.bookdetail}}</view>
+     <view style='display: flex;'>
+    <view class="bollow" bindtap='removepublish' wx:if="{{show}}"><text>取消发布</text></view>
+    <view class="bollow"  wx:else><text>已取消</text></view>
+   
+      </view>
+    
+  </view>
+

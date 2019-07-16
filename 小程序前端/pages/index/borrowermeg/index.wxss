@@ -1,0 +1,74 @@
+/* pages/index/borrowermeg/index.wxss */
+
+
+
+
+
+
+
+.borrow-msgs{
+  padding: 30rpx 20rpx;
+}
+.message{
+  border-radius: 20rpx;
+  background-color:rgb(252,232,150);
+  position: relative;
+  margin: 40rpx 0;
+  height: 400rpx;
+}
+.msg-time{
+  width: 100%;
+  color: #aaa;
+  text-align: center;
+  font-size: 26rpx;
+  position: absolute;
+  top: -38rpx;
+}
+.msg-title{
+  font-size: 28rpx;
+  color: #666;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-indent: 20rpx;
+  border-radius: 20rpx 20rpx 0 0;
+  background-color: rgb(253, 221, 90);
+}
+.msg-content{
+  font-size: 30rpx;
+  height: 200rpx;
+  color: #333;
+  padding: 30rpx 20rpx;
+}
+.msg-content .borrower, .book-name, .wxNum, .phoneNum{
+  color: rgb(9,186,7);
+}
+.msg-content view{
+  height: 50rpx;
+  line-height: 50rpx;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.msg-operation{
+  text-align: center;
+  font-size: 26rpx;
+}
+.reject{
+  color: #666;
+  text-decoration: underline;
+  margin-right: 50rpx;
+  vertical-align: bottom;
+}
+.agree{
+  display: inline-block;
+  color: #fff;
+  font-size: 26rpx;
+  border-radius: 40rpx;
+  background-color: rgb(216,56,35);
+  height: 60rpx;
+  line-height: 60rpx;
+  width: 200rpx;
+  vertical-align: bottom;
+}
+
+

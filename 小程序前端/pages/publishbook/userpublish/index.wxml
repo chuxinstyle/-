@@ -1,0 +1,34 @@
+<!--pages/publishbook/userpublish/index.wxml-->
+
+
+
+<view class="book-detail-header">
+  <image src="{{ImageSrc}}"  class="book-image" bindtap="chooseImage"></image>
+  <view class="book-detail-author">
+    <input class="title" placeholder="书名" bindinput="titleinput"></input>
+    <input class="author" placeholder="作者" bindinput="authorinput"></input>
+    <input class="author" placeholder="isbn号" bindinput="isbninput"></input>
+    <view>
+      <view class="bookclass" bindtap='select'>{{nowtext}}
+        <view class="select" wx:if="{{show}}">
+          <view class="select" wx:for="{{BookClass}}" wx:for-index='n' wx:for-item="class" bindtap='selectclass' data-class="{{class}}">{{class}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="book-summary">
+  <text class="book-summary-header"></text>
+  <view class="book-summary-content"></view>
+  <block wx:if="{{pb}}">
+  <view class="publish" bindtap='publish'>
+    <text>确定发布</text>
+  </view>
+  </block>
+  <block else>
+  <view class="publish" >
+    <text>已发布</text>
+  </view>
+  </block>
+</view>

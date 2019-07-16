@@ -1,0 +1,66 @@
+<!--index.wxml-->
+<view class="page__hd">
+   <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+  <block wx:else>
+  <view class="page__hd-md center">
+    <image src="{{userInfo.avatarUrl}}" />
+  </view>
+  </block>
+  <view class="page-username center">{{userInfo.nickName}}</view>
+</view>
+<view class="weui-cells weui-cells_after-title">
+  <navigator url="../../pages/publishbook/userpublish/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__bd">发布图书</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </navigator>
+  <navigator url="../../pages/index/borrowermeg/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__bd">借阅信息</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </navigator>
+  <navigator url="../../pages/index/addresslist/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__bd">收货地址</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </navigator>
+  <navigator url="../../pages/index/collection/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__bd">我的收藏</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </navigator>
+</view>
+
+<view>
+  <view class="tab {{tab_index == 0? 'active':''}}" data-index="{{0}}" data-bookclass="{{class}}" catchtap="selectTab">我的发布</view>
+  <view class="tab {{tab_index == 1? 'active':''}}" data-index="{{1}}" data-bookclass="{{class}}" catchtap="selectTab">我的借阅</view>
+</view>
+
+<swiper class="sw" bindchange="tabChange" current="{{tab_index}}">
+  <swiper-item>
+    <scroll-view scroll-y="true" style="height:100%">
+      <block wx:for="{{publishbooks}}" wx:for-item="b">
+        <view class="booklist" data-isbn="{{b.isbn}}" data-book="{{b}}" bindtap='gobookdetail'>
+          <image src="{{b.image}}" class='book-icon-img' mode="aspectFill"></image>
+          <view class='bookmessg'>
+            <text style="height:40%" class="bookname">{{b.bookname}}</text>
+            <text style="height:20%" class="text">{{b.writer}}</text>
+            <text style="height:40%" class="text">{{b.bookdetail}}</text>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </swiper-item>
+
+  <swiper-item>
+    <scroll-view scroll-y="true" style="height:100%">
+      <block wx:for="{{borrowbook}}" wx:for-item="b">
+        <view class="booklist"  data-isbn="{{b.isbn}}">
+          <image src="{{b.image}}" class='book-icon-img' mode="aspectFill"></image>
+          <view class='bookmessg'>
+            <text style="height:40%" class="bookname">书名:{{b.bookname}}</text>
+            <text style="height:20%" class="text">作者:{{b.writer}}</text>
+            <button bindtap='returnbook' data-isbn="{{b.isbn}}">归还</button>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </swiper-item>
+
+</swiper>

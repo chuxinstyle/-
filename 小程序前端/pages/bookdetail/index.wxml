@@ -1,0 +1,22 @@
+<!--pages/bookdetail/index.wxml-->
+  <view class="book-detail-header">
+    <image src="{{book.image}}" class="book-image"></image>
+    <view class="book-detail-author">
+      <text class="title">书名:{{book.bookname}}</text>
+      <text class="author">作者：{{book.writer}}</text>
+      <text class="rate">种类：{{book.bookclass}}</text>
+    </view>
+  </view>
+  <view class="book-summary">
+    <text class="book-summary-header">图书简介</text>
+    <view class="book-summary-content">{{book.bookdetail}}</view>
+     <view style='display: flex;'>
+    <view class="bollow" bindtap='borrow' wx:if="{{book.borrower==null}}"><text>确定借阅</text></view>
+    <view class="bollow"  wx:else><text>已被借阅</text></view>
+    <view class="collect" bindtap='collect' wx:if="{{collection}}"><text>确定收藏</text></view>
+    <view class="collect" bindtap='deletecollect' wx:else><text>取消收藏</text></view>
+      </view>
+    
+  </view>
+
+

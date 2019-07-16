@@ -1,0 +1,26 @@
+<!--pages/wxml/indeex.wxml-->
+<view class="sy">
+  <view class='book-icon'>
+    <image src='../../imag/qqtp/book-icon.png' class='book-icon-img'></image>
+  </view>
+  <view class='explain'>欢迎来到共享图书程序，点击扫一扫扫描图书条码分享图书</view>
+
+
+  <view class='scan'>
+    <button class='scan-btn' bindtap="scanBook">
+      <image src="../../imag/qqtp/scan.png" class="scan-img"></image>扫一扫漂流图书
+    </button>
+  </view>
+</view>
+<view >
+  <view>新书速递</view>
+  <view class="booklist" bindtap='gobookdetail' data-isbn="{{book[0].isbn}}">
+    <image src="{{book[0].image}}" class='book-img' mode="aspectFill"></image>
+    <view class='bookmessg'>
+      <text style="height:30%" class="bookname">{{book[0].bookname}}</text>
+      <text style="height:30%" class="text1">{{book[0].writer}}</text>
+      <text style="height:40%" class="text2">{{book[0].bookdetail}}</text>
+    </view>
+  </view>
+
+</view>
